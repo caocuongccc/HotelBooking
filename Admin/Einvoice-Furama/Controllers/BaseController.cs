@@ -8,7 +8,6 @@ using Einvoice_Customer.Models;
 using Einvoice_Customer.Service;
 using System.Threading.Tasks;
 using HDDT_FURAMA;
-using Einvoice_Customer.HDDT.PortalService;
 
 namespace Einvoice_Customer.Controllers
 {
@@ -80,13 +79,7 @@ namespace Einvoice_Customer.Controllers
         {
             get { return emailService ?? (emailService = new EmailServices()); }
         }
-        private PortalService portalService;
-
-        public PortalService PortalService
-        {
-            get { return portalService ?? (portalService = new PortalService()); }
-        }
-
+        
 
         public async Task<InvoiceCusSP> GetInvByHash(string hash)
         {
@@ -104,11 +97,11 @@ namespace Einvoice_Customer.Controllers
                 string ReturnValue = "";
                 if (paymentstatus == 0)
                 {
-                    ReturnValue = PortalService.getInvViewNoPay(invToken, UserService, PassService);
+                    ReturnValue = "";// PortalService.getInvViewNoPay(invToken, UserService, PassService);
                 }
                 else
                 {
-                    ReturnValue = PortalService.convertForStore(invToken, UserService, PassService);
+                    ReturnValue = "";// PortalService.convertForStore(invToken, UserService, PassService);
                 }
                 if (ReturnValue == "ERR:1")
                 {

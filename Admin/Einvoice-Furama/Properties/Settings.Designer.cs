@@ -22,15 +22,5 @@ namespace Einvoice_Customer.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://vnptmtadmin.vnpt-invoice.com.vn/PortalService.asmx")]
-        public string Einvoice_Customer_HDDT_PortalService_PortalService {
-            get {
-                return ((string)(this["Einvoice_Customer_HDDT_PortalService_PortalService"]));
-            }
-        }
     }
 }

@@ -220,11 +220,6 @@
     <Compile Include="Service\ChanelFactory.cs" />
     <Compile Include="Service\EmailServices.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="Web References\HDDT.PortalService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-datepicker.css" />
@@ -512,11 +507,6 @@
     <Content Include="Views\Shared\NotFound.cshtml" />
     <Content Include="Views\EinvoiceCustomer\EInvoiceCustomerItem.cshtml" />
     <Content Include="Views\EinvoiceCustomer\EInvoiceCustomerItemContent.cshtml" />
-    <None Include="Web References\HDDT.PortalService\portalservice.wsdl" />
-    <Content Include="Web References\HDDT.PortalService\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -553,19 +543,6 @@
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <WebReferenceUrl Include="https://vnptmtadmin.vnpt-invoice.com.vn/PortalService.asmx%3fWSDL">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\HDDT.PortalService\</RelPath>
-      <UpdateFromURL>https://vnptmtadmin.vnpt-invoice.com.vn/PortalService.asmx%3fWSDL</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>Einvoice_Customer_HDDT_PortalService_PortalService</CachedSettingsPropName>
-    </WebReferenceUrl>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -193,9 +193,9 @@ namespace Einvoice_Customer.Controllers
         {
             ViewBag.Token = token;
             ViewBag.PaymentStatus = paymentstatus;
-            
+
             // Lấy hóa đơn dạng pdf của khách hàng thông qua hàm webservice
-            string pdf = PortalService.downloadInvPDF(token, this.UserService, this.PassService);
+            string pdf = "";// PortalService.downloadInvPDF(token, this.UserService, this.PassService);
 
             if (pdf == "ERR:11")
             {
@@ -217,7 +217,7 @@ namespace Einvoice_Customer.Controllers
             ViewBag.PaymentStatus = paymentstatus;
 
             // Lấy hóa đơn dạng .inv của khách hàng thông qua hàm webservice
-            string inv = PortalService.downloadInv(token, this.UserService, this.PassService);
+            string inv = "";//PortalService.downloadInv(token, this.UserService, this.PassService);
 
             if (inv == "ERR:11")
             {
