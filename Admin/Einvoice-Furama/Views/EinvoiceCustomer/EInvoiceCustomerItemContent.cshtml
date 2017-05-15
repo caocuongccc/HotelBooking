@@ -1,0 +1,144 @@
+﻿@model List<Einvoice_Customer.Models.InvoiceCusSP>
+<div class="table-responsive">
+    <table class="table table-striped table-hover table-bordered table-product">
+        <thead>
+            <tr>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.index)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.invToken)
+                    </th>*@
+                <th>
+                    @Einvoice_Customer.Language.Resource.Stt
+                </th>
+                <th>
+                    @*@Html.DisplayNameFor(model => model.name)*@
+                    @Einvoice_Customer.Language.Resource.TenHoaDon
+                </th>
+                <th>
+                    @*@Html.DisplayNameFor(model => model.pattern)*@
+                    @Einvoice_Customer.Language.Resource.MauSo
+                </th>
+                <th style="width:7%">
+                    @*@Html.DisplayNameFor(model => model.serial)*@
+                    @Einvoice_Customer.Language.Resource.KyHieu
+                </th>
+                <th style="width:9%">
+                    @*@Html.DisplayNameFor(model => model.invnum)*@
+                    @Einvoice_Customer.Language.Resource.SoHoaDon
+                </th>
+                <th style="width:8%">
+                    @*@Html.DisplayNameFor(model => model.amount)*@
+                    @Einvoice_Customer.Language.Resource.TongTien
+                </th>
+                <th style="width:8%">
+                    @*@Html.DisplayNameFor(model => model.publishdate)*@
+                    @Einvoice_Customer.Language.Resource.NgayXuat
+                </th>
+                <th style="width:8%">
+                    @*@Html.DisplayNameFor(model => model.signstatus)*@
+                    @Einvoice_Customer.Language.Resource.XemHoaDon
+                </th>
+                <th style="width:11%">
+                    @*@Html.DisplayNameFor(model => model.payment)*@
+                    @Einvoice_Customer.Language.Resource.ThanhToan
+                </th>
+                <th style="width:10%">
+                    @*@Html.DisplayNameFor(model => model.status)*@
+                    @Einvoice_Customer.Language.Resource.TrangThai
+                </th>
+                <th style="width:11%"></th>
+            </tr>
+        <tbody>
+            @if (@Model != null)
+            {
+                foreach (var item in Model)
+                {
+
+                    <tr>
+                        @*<td>
+                        @Html.DisplayFor(modelItem => item.index)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.invToken)
+                    </td>*@
+                        <td>
+                            @item.ROWNUM
+                        </td>
+                        <td style="text-align:left">
+                            <p>@Einvoice_Customer.Language.Resource.VATInvoice</p>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Pattern)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Serial)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.InvNo).ToString().PadLeft(7, '0')
+                        </td>
+                        <td class="money">
+                            @Html.DisplayFor(modelItem => item.Amount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.KindOfService)
+                        </td>
+                        <td>
+                            @if (item.IsWatch)
+                            {
+                                <p>@Einvoice_Customer.Language.Resource.DaXem</p>
+                            }
+                            else
+                            {
+                                <p>@Einvoice_Customer.Language.Resource.ChuaXem</p>
+                            }
+                        </td>
+                        <td>
+                            @Einvoice_Customer.Common.InvoiceStatus.PaymentStatusDescription(item.PaymentStatus)
+                        </td>
+                        <td>
+                            @Einvoice_Customer.Common.InvoiceStatus.KindOfDescription(item.KindOfInv)
+                        </td>
+                        <td>
+                            <span class="btn btn-success btn-sm" onclick="return ViewInvoice(@item.Id,'@item.InvToken',@item.PaymentStatus)">
+                                <i class="glyphicon glyphicon-search note" title= @Einvoice_Customer.Language.Resource.ChiTietHoaDon style="margin:0 -2px">
+
+                                </i>
+                            </span>
+                                @*@Html.ActionLink(" ",
+                                         "View",
+                                         new { id = 1, token = @item.InvToken, paymentstatus = @item.PaymentStatus },
+                                   new { @class = "glyphicon glyphicon-search note", data_modal = "", title = "Xem chi tiết hóa đơn.", style = "color:white; text-decoration:none;margin: -5px; padding: 3px;" })*@
+                            @*&nbsp;*@
+                            <span class="btn btn-danger btn-sm">
+                                @Html.ActionLink(" ",
+                                         "ViewPDF",
+                                   new { token = @item.InvToken, paymentstatus = @item.PaymentStatus },
+                                      new { @class = "glyphicon glyphicon-file note ico pdf_ico", title = Einvoice_Customer.Language.Resource.XemPDF, style = "color:white; text-decoration:none;" })
+                            </span>
+                            @*&nbsp;*@
+                            <span class="btn btn-warning btn-sm">
+                                @Html.ActionLink(" ",
+                                         "ViewINV",
+                                   new { token = @item.InvToken, paymentstatus = @item.PaymentStatus },
+                                      new { @class = "glyphicon glyphicon-file note ico ivn_ico", title = Einvoice_Customer.Language.Resource.InvDown, style = "color:white; text-decoration:none;" })
+                            </span>
+
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+    <script>
+        $.fn.digits = function () {
+            return this.each(function () {
+                $(this).text($(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1."));
+            })
+        }
+        $(".money").digits();
+    </script>
+</div>
+
+

@@ -1,0 +1,52 @@
+﻿@using Einvoice_Customer.Models
+@model LoginViewModel
+
+@{
+    ViewBag.Title = Einvoice_Customer.Language.Resource.LoginSystem;
+}
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    // Nếu ViewBag.Message khác rỗng tức người dùng vào 1 link khác Home/Index mà chưa đăng nhập
+    // Do đó hiển thị popup để thông báo
+
+    if (!string.IsNullOrEmpty(ViewBag.Message))
+    {
+        string message = "Login to use this portal";
+        string result = string.Format("<script type='text/javascript'>alert('{0}');</script>", message);
+
+        HttpContext.Current.Response.Write(result);
+    }
+    
+}
+
+<br/>
+
+    
+
+@if (!(Request.IsAuthenticated))
+{
+    @Html.Partial("_LoginLayout")
+}
+else
+{
+
+}
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#a-view-document').click(function () {
+           
+            $('.ol-document').slideToggle();
+        });
+
+    });
+</script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

@@ -1,0 +1,177 @@
+﻿@using Microsoft.AspNet.Identity
+@using Einvoice_Customer.Models
+@model DoLoginViewModel
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<script src="~/Scripts/Common.js"></script>
+<style>
+    .form-horizontal .form-group {
+    margin-left: 0px; 
+     margin-right: 0px; 
+}
+</style>
+<script type="text/javascript">
+    function DoLogin() {
+        if (commonJS.ValidateForm('#demo-form2')) {
+            var mydata = $('#demo-form2').serialize();
+            $.ajax({
+                url: '/Account/DoLogin',
+                data: mydata,
+                type: 'POST',
+                success: function (data) {
+                    if (data) {
+                        if (data.IsSuccess) {
+							if ($('#RememberMe').is(':checked')) {
+
+                                var username = $('#CustomerCode').val();
+                                var password = $('#Password').val();
+                                // set cookies to expire in 14 days
+                                $.cookie('username', username, { expires: 14 });
+                                $.cookie('password', password, { expires: 14 });
+                                $.cookie('remember', true, { expires: 14 });
+                            } else {
+                                // reset cookies
+                                $.cookie('username', null);
+                                $.cookie('password', null);
+                                $.cookie('remember', null);
+                            }
+                            window.location.href = "@Url.Action("Index", "EinvoiceCustomer")";
+
+                        }
+                        else {
+                            $('#msgerror').text(data.Error);
+                        }
+                    }
+                }
+            });
+        }
+    }
+</script>
+
+<div class="modal fade bs-example-modal-sm" id="loginForm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">@Einvoice_Customer.Language.Resource.LoginSystem</h4>
+            </div>
+            <div class="modal-body">
+<div class="login">
+    @*<h2 class="text-center">@Einvoice_Customer.Language.Resource.LoginSystem</h2>
+    <div class="col-sm-12">*@
+        <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+            @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+            <label id="msgerror" style="border:none; width:100%" readonly="readonly" class="text-danger" ></label>
+            <div class="form-group">
+                <label class="label-control">@Einvoice_Customer.Language.Resource.TenDangNhap:</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></span>
+                    @Html.TextBoxFor(m => m.CustomerCode, new { @class = "form-control" })
+                </div>
+                @Html.ValidationMessageFor(m => m.CustomerCode, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group ">
+                <label class="label-control">@Einvoice_Customer.Language.Resource.Matkhau:</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock" aria-hidden="true"></i></span>
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                </div>
+                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.EditorFor(model => model.RememberMe, new { htmlAttributes = new { @class = "flat" } })
+                @Html.LabelFor(m => m.RememberMe)
+            </div>
+            <div class="form-group">
+                <input type="button" onclick="return DoLogin()" value="@Einvoice_Customer.Language.Resource.DangNhap" class="btn btn-login btn-block" />
+            </div>
+            <div class="clearfix"></div>
+            <div class="form-group">
+                <div class="col-lg-offset-5 col-lg-7 col-md-12 text-center">
+                    <a href="~/Account/ForgotPassword">@Einvoice_Customer.Language.Resource.ForgotPass</a>
+                </div>
+            </div>
+        </form>
+    @*</div>
+    <div class="clearfix"></div>*@
+</div>
+<script>
+    var remember = $.cookie('remember');
+
+    if (remember == 'true') {
+        var username = $.cookie('username');
+        var password = $.cookie('password');
+        // autofill the fields
+        $('#CustomerCode').attr("value", username);
+        $('#Password').attr("value", password);
+        $("#RememberMe").attr('checked', 'checked');
+
+    }
+</script>
+    </div>
+                </div>
+            </div>
+        </div>
+
+
+    @*@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizon     tal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-offset-3 col-sm-6 ">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <div class="row">
+                                    @Html.LabelFor(m => m.CustomerCode, new { @class = "control-label" })
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="row">
+                                    @Html.TextBoxFor(m => m.CustomerCode, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.CustomerCode, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <div class="row">
+                                    @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="row">
+                                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="form-group">
+                        <div class="col-lg-6 col-md-12">
+                            <div class="row">
+                                @Html.EditorFor(model => model.RememberMe, new { htmlAttributes = new { @class = "flat" } })
+                                @Html.LabelFor(m => m.RememberMe)
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            <div class="row">
+                                <input type="submit" value="Đăng Nhập" class="btn btn-success btn-sm btn-block" />
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-lg-offset-5 col-lg-7 col-md-12 text-center">
+                            <a href="~/Account/ForgotPassword">Quên mật khẩu</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        }*@

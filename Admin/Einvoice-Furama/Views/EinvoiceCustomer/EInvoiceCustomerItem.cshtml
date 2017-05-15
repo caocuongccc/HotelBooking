@@ -1,0 +1,61 @@
+﻿@{
+    Layout = null;
+}
+
+<div id="EInvoiceCustomerItemContentTable" class="x_content">
+    @Html.Partial("EInvoiceCustomerItemContent")
+</div>
+<div class="x_content">
+    <div class="text-right" style="margin-bottom:10px">
+
+            <span class="btn bill-list ">
+                <a onclick="return ExportPDF()" style="text-decoration:none; color:white;" target="_blank">@Einvoice_Customer.Language.Resource.ListInvByPDF</a>
+            </span>
+
+    </div>
+
+    <p class="demo demo4_bottom">
+
+    </p>
+</div>
+<script src="~/Scripts/jquery.bootpag.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $('.demo4_top,.demo4_bottom').bootpag({
+            total: @ViewBag.TotalPages,
+            page: 1,
+            maxVisible: 10,
+            leaps: true,
+            firstLastUse: true,
+            first: '←',
+            last: '→',
+            wrapClass: 'pagination',
+            activeClass: 'active',
+            disabledClass: 'disabled',
+            nextClass: 'next',
+            prevClass: 'prev',
+            lastClass: 'last',
+            firstClass: 'first'
+        }).on("page", function (event, num) {
+            //$(".content4").html("Page " + num); // or some ajax content loading...
+            var page = num;
+            var startDate = $('#StartDate').val();
+            var endDate = $('#EndDate').val();
+            $.ajax({
+                url: '/EinvoiceCustomer/Paging',
+                data: {
+                    page: page,
+                    startDate: startDate,
+                    endDate: endDate
+                },
+                success: function (data) {
+                    $("#EInvoiceCustomerItemContentTable").html(data);
+                }
+            });
+        });
+
+    })
+
+</script>

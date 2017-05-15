@@ -1,0 +1,144 @@
+﻿
+<script type="text/javascript">
+    function Search() {
+        var startDate = $('#StartDate').val();
+        var endDate = $('#EndDate').val();
+        $.ajax({
+            url: '/EinvoiceCustomer/Search',
+            data: {
+                startDate: startDate,
+                endDate: endDate,
+            },
+            success: function (data) {
+                $("#EInvoiceCustomerItemsTable").html(data);
+            }
+        });
+    }
+</script>
+@{
+    ViewBag.Title = Einvoice_Customer.Language.Resource.ListBill;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+    .custom-dialog.in {
+        overflow-y: auto;
+    }
+</style>
+    <h4>
+        <span class="glyphicon glyphicon-th"></span>
+            @Einvoice_Customer.Language.Resource.ListBill @ViewBag.TenDonVi.ToUpper()
+    </h4>
+
+<div class="col-sm-5">
+    <div class="row">
+        <label class="col-md-5 col-sm-5 control-label"><div class="row text-center" style="line-height:30px;">@Einvoice_Customer.Language.Resource.ViewFromDate</div></label>
+        <div class="col-md-7 col-sm-7">
+            @*@Html.TextBox("StartDate", String.Format("{0:dd/MM/yyyy}", DateTime.Now), new { @class = "form-control datecontrol" })*@
+            <input id="StartDate" format="dd/MM/yyyy" class="placeholder form-control" name="date" placeholder="__/__/____" type="text">
+        </div>
+    </div>
+</div>
+<div class="col-sm-5">
+    <div class="row">
+        <label class="col-md-4 col-sm-4 control-label"><div class="row text-center" style="line-height:30px;">@Einvoice_Customer.Language.Resource.ToDate</div></label>
+        <div class="col-md-8 col-sm-8">
+            @*@Html.TextBox("EndDate", String.Format("{0:dd/MM/yyyy}", DateTime.Now), new { @class = "form-control datecontrol" })*@
+            <input id="EndDate" format="dd/MM/yyyy" class="placeholder form-control" name="date" placeholder="__/__/____" type="text">
+        </div>
+    </div>
+</div>
+<div class="col-sm-2">
+    <input type="button" onclick="return Search()" value="@Einvoice_Customer.Language.Resource.Listed" class="btn bill-list" />
+</div>
+<div class="clearfix"></div>
+
+<br />
+<div id="EInvoiceCustomerItemsTable">
+    @Html.Partial("EInvoiceCustomerItem")
+</div>
+<script src="~/Scripts/jquery.blockUI.js"></script>
+<script src="~/Scripts/Common.js"></script>
+<script src="~/Scripts/Extension.js"></script>
+<script type="text/javascript" src="~/Content/js/bootstrap-datepicker.min.js"></script>
+<script type="text/javascript" src="~/Content/js/icheck.min.js"></script>
+<script>
+    function ViewInvoice(id, token, paymentstatus)
+    {
+        commonJS.OpenLoading();
+        var iframe = $('<iframe>', {
+            src: '/EinvoiceCustomer/View?Id=' + id + '&token=' + token + '&paymentstatus=' + paymentstatus,
+            style: 'width:100% ;height: 1100px;border: none;',
+        });
+
+        showPopup(iframe);
+
+        function showPopup(iframe) {
+
+            commonJS.CloseLoading();
+
+            PopupDialog.ShowHtml({
+                html: '<div id="contentIframe" style="width: 98%;margin: auto;padding: 10px;"></div>',
+                title: null,
+                //title: 'Chi tiết hóa đơn',
+                size: 'large',
+                openCallback: function (modal) {
+                    $('#contentIframe').append(iframe);
+                    $(modal.find('.modal-content')).addClass('padding-25');
+                    $(modal).find('.modal-dialog').addClass('boder-style');
+                    @*$('#contentIframe').prepend('<img id="imgCancel" src="/Content/Images/mark.png" style="position: absolute; z-index: 3; width: 790px; height: 760px;" />') *@
+                    },
+            });
+        }
+    }
+    function ExportPDF()
+    {
+        var startDate = $('#StartDate').val();
+        var endDate = $('#EndDate').val();
+        //$.ajax({
+        //    url: '/EinvoiceCustomer/ExportPDF',
+        //    data: {
+        //        startDate: startDate,
+        //        endDate: endDate
+        //    },
+        //    success: function (data) {
+
+        //    }
+        //});
+        window.location.href = "@Url.Action("ExportPDF", "EinvoiceCustomer")" + '?startDate=' + startDate + '&endDate=' + endDate;
+    }
+    $(document).ready(function () {
+        $('#StartDate').datepicker({
+            format: 'dd/mm/yyyy'
+        }).on('changeDate', function (selected) {
+  
+            var minDate = new Date(selected.date.valueOf());
+            $('#EndDate').datepicker('setStartDate', minDate);
+        });
+        $('#EndDate').datepicker({
+            format: 'dd/mm/yyyy',
+        }).on('changeDate', function (selected) {
+    
+            var minDate = new Date(selected.date.valueOf());
+            $('#StartDate').datepicker('setEndDate', minDate);
+
+        });
+        $('#EndDate').change(function () {
+
+            var val = $('#EndDate').val();
+            if (val == "") {
+                $('#StartDate').datepicker('setEndDate', 0);
+            }
+        });
+        $('#StartDate').change(function () {
+        
+            var val = $('#StartDate').val();
+            if (val == "") {
+                $('#EndDate').datepicker('setStartDate', 0);
+            }
+        });
+        $(".note").tooltip({
+            placement: 'top'
+        })
+    });
+</script>
+

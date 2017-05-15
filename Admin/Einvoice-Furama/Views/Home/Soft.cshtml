@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Phần Mềm Hỗ Trợ";
+}
+<p class="text-primary">
+    <br />
+    <h4>
+        <span class="glyphicon glyphicon-download-alt"></span>
+        <b>
+            @ViewBag.Title.ToUpper()
+        </b>
+    </h4>
+</p>
+<hr/>
+<div class="alert alert-info" role="alert">
+    Phần mềm xem hóa đơn điện tử : <a href="~/Soft/EInvoiceViewer.exe" onclick="return confirm('Bạn muốn download phần mềm xem hóa đơn điện tử?')">Tải về</a>
+</div>
+<div class="alert alert-info" role="alert">
+    Phần mềm ký số : <a href="~/Soft/JavaPlugin.exe" onclick="return confirm('Bạn muốn download phần mềm ký số?')">Tải về</a>
+</div>
+
+

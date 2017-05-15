@@ -1,0 +1,732 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>F:\TEMP\VNPT_INVOICE\Laguna\Publishs\Portal</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_Browsers/qt.browser">
+      <publishTime>11/21/2016 08:36:55</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>02/22/2013 08:43:40</publishTime>
+    </File>
+    <File Include="bin/App_Browsers.dll">
+      <publishTime>05/15/2017 09:31:27</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.compiled">
+      <publishTime>05/15/2017 09:31:27</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.dll">
+      <publishTime>05/15/2017 09:31:27</publishTime>
+    </File>
+    <File Include="bin/Einvoice-Customer.dll">
+      <publishTime>05/12/2017 10:30:14</publishTime>
+    </File>
+    <File Include="bin/Einvoice-Customer.XmlSerializers.dll">
+      <publishTime>05/12/2017 10:30:16</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>02/25/2014 01:34:42</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>02/25/2014 01:34:42</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
+      <publishTime>02/27/2014 14:06:32</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.EntityFramework.dll">
+      <publishTime>02/27/2014 14:06:32</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
+      <publishTime>02/27/2014 14:06:32</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>01/13/2014 16:11:08</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
+      <publishTime>01/13/2014 16:11:04</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Cookies.dll">
+      <publishTime>01/13/2014 16:11:10</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.dll">
+      <publishTime>01/13/2014 16:11:08</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Facebook.dll">
+      <publishTime>01/13/2014 16:11:10</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Google.dll">
+      <publishTime>01/13/2014 16:11:10</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.MicrosoftAccount.dll">
+      <publishTime>01/13/2014 16:11:12</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.OAuth.dll">
+      <publishTime>01/13/2014 16:11:12</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Twitter.dll">
+      <publishTime>01/13/2014 16:11:12</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>07/25/2012 11:48:56</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>06/06/2013 13:33:54</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>11/13/2012 12:19:34</publishTime>
+    </File>
+    <File Include="bin/PagedList.dll">
+      <publishTime>09/30/2013 17:36:38</publishTime>
+    </File>
+    <File Include="bin/PagedList.Mvc.dll">
+      <publishTime>09/30/2013 18:15:20</publishTime>
+    </File>
+    <File Include="bin/Rotativa.dll">
+      <publishTime>03/24/2015 15:16:18</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>02/19/2014 09:49:50</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>02/19/2014 09:48:24</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>02/11/2014 15:26:04</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>02/19/2014 09:48:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>02/19/2014 09:49:50</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>02/19/2014 09:49:50</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>02/19/2014 09:49:50</publishTime>
+    </File>
+    <File Include="bin/vi/Einvoice-Customer.resources.dll">
+      <publishTime>05/12/2017 10:30:16</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>07/17/2013 17:03:52</publishTime>
+    </File>
+    <File Include="bin/__browserCapabilitiesCompiler.compiled">
+      <publishTime>05/15/2017 09:31:27</publishTime>
+    </File>
+    <File Include="Content/bootstrap-datepicker.css">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.css">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.js">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min1.css">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/datepicker3.css">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/hoadon_style.css">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/Images/01.jpg">
+      <publishTime>04/10/2017 16:00:56</publishTime>
+    </File>
+    <File Include="Content/Images/02.jpg">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/Images/03.jpg">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/Images/04.jpg">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/Images/1.jpg">
+      <publishTime>04/10/2017 16:00:56</publishTime>
+    </File>
+    <File Include="Content/Images/2.jpg">
+      <publishTime>04/10/2017 16:00:56</publishTime>
+    </File>
+    <File Include="Content/Images/3.jpg">
+      <publishTime>04/10/2017 16:00:56</publishTime>
+    </File>
+    <File Include="Content/Images/4.jpg">
+      <publishTime>04/10/2017 16:00:56</publishTime>
+    </File>
+    <File Include="Content/Images/ads.png">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/Images/ajax-loading-white.gif">
+      <publishTime>11/07/2016 10:08:59</publishTime>
+    </File>
+    <File Include="Content/Images/b05.png">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/Images/baner-18001166.jpg">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/Images/baner-nang-dong.jpg">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/Images/bn0.jpg">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/Images/bn2sua.jpg">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/Images/header-bg.png">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/Images/img_slide1.jpg">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/Images/img_slide2.jpg">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/Images/img_slide3.jpg">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/Images/img_slide4.jpg">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/Images/logo-ft.png">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/Images/logo-ts.png">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/Images/logo.png">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/jquery.fancybox.css">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/js/bootstrap-datepicker.js">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/js/bootstrap-datepicker.min.js">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/js/icheck.min.js">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/js/jquery.min.js">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/js/script.js">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/js/wowslider.js">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/PagedList.css">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/responsive.css">
+      <publishTime>05/12/2017 15:37:18</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>05/12/2017 15:37:18</publishTime>
+    </File>
+    <File Include="Content/style.css">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/style1.css">
+      <publishTime>11/21/2016 08:36:54</publishTime>
+    </File>
+    <File Include="Content/style3.css">
+      <publishTime>01/11/2017 17:43:08</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>04/10/2017 16:00:58</publishTime>
+    </File>
+    <File Include="favicon_.ico">
+      <publishTime>04/10/2017 16:00:58</publishTime>
+    </File>
+    <File Include="file_example/1703_TCT-DNL_20140514.doc">
+      <publishTime>11/21/2016 08:36:55</publishTime>
+    </File>
+    <File Include="file_example/2415_TCT-DNL_20110713.doc">
+      <publishTime>11/21/2016 08:36:55</publishTime>
+    </File>
+    <File Include="file_example/2488_TCT-DNL_20130805.doc">
+      <publishTime>11/21/2016 08:36:55</publishTime>
+    </File>
+    <File Include="file_example/2597_TCT-DNL_20130812.doc">
+      <publishTime>11/21/2016 08:36:55</publishTime>
+    </File>
+    <File Include="file_example/TT32BTC_20110314.DOC">
+      <publishTime>11/21/2016 08:36:55</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>11/21/2016 08:37:21</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>11/21/2016 08:37:21</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>11/21/2016 08:37:21</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>11/21/2016 08:37:21</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>11/21/2016 08:37:21</publishTime>
+    </File>
+    <File Include="img/ads.png">
+      <publishTime>11/21/2016 08:37:22</publishTime>
+    </File>
+    <File Include="img/background.swf">
+      <publishTime>11/21/2016 08:37:22</publishTime>
+    </File>
+    <File Include="img/banner.jpg">
+      <publishTime>11/21/2016 08:37:22</publishTime>
+    </File>
+    <File Include="img/banner1.png">
+      <publishTime>11/21/2016 08:37:22</publishTime>
+    </File>
+    <File Include="img/banner2.jpg">
+      <publishTime>11/21/2016 08:37:22</publishTime>
+    </File>
+    <File Include="img/banner3.png">
+      <publishTime>11/21/2016 08:37:22</publishTime>
+    </File>
+    <File Include="img/header-bg.png">
+      <publishTime>11/21/2016 08:37:22</publishTime>
+    </File>
+    <File Include="img/img.jpg">
+      <publishTime>12/22/2016 17:38:31</publishTime>
+    </File>
+    <File Include="img/img_slide1.jpg">
+      <publishTime>11/21/2016 08:37:22</publishTime>
+    </File>
+    <File Include="img/img_slide2.jpg">
+      <publishTime>11/21/2016 08:37:22</publishTime>
+    </File>
+    <File Include="img/img_slide3.jpg">
+      <publishTime>11/21/2016 08:37:22</publishTime>
+    </File>
+    <File Include="img/img_slide4.jpg">
+      <publishTime>11/21/2016 08:37:22</publishTime>
+    </File>
+    <File Include="img/loading.gif">
+      <publishTime>11/21/2016 08:37:22</publishTime>
+    </File>
+    <File Include="img/logo-ft.png">
+      <publishTime>11/21/2016 08:37:22</publishTime>
+    </File>
+    <File Include="img/logo-ts.png">
+      <publishTime>11/21/2016 08:37:22</publishTime>
+    </File>
+    <File Include="img/logo.jpg">
+      <publishTime>11/21/2016 08:37:22</publishTime>
+    </File>
+    <File Include="img/logo.png">
+      <publishTime>04/10/2017 16:00:58</publishTime>
+    </File>
+    <File Include="img/slide1.jpg">
+      <publishTime>11/21/2016 08:37:22</publishTime>
+    </File>
+    <File Include="img/slide1.png">
+      <publishTime>11/21/2016 08:37:22</publishTime>
+    </File>
+    <File Include="img/slide12.png">
+      <publishTime>11/21/2016 08:37:22</publishTime>
+    </File>
+    <File Include="img/slide2.jpg">
+      <publishTime>11/21/2016 08:37:22</publishTime>
+    </File>
+    <File Include="img/slide2.png">
+      <publishTime>11/21/2016 08:37:22</publishTime>
+    </File>
+    <File Include="img/slide22.png">
+      <publishTime>11/21/2016 08:37:22</publishTime>
+    </File>
+    <File Include="img/slide3.jpg">
+      <publishTime>11/21/2016 08:37:22</publishTime>
+    </File>
+    <File Include="img/slide3.png">
+      <publishTime>11/21/2016 08:37:22</publishTime>
+    </File>
+    <File Include="img/slide32.png">
+      <publishTime>11/21/2016 08:37:22</publishTime>
+    </File>
+    <File Include="img/slide4.jpg">
+      <publishTime>11/21/2016 08:37:22</publishTime>
+    </File>
+    <File Include="img/slide4.png">
+      <publishTime>11/21/2016 08:37:22</publishTime>
+    </File>
+    <File Include="img/slide42.png">
+      <publishTime>11/21/2016 08:37:22</publishTime>
+    </File>
+    <File Include="img/thong-tin-lien-lac.png">
+      <publishTime>11/21/2016 08:37:22</publishTime>
+    </File>
+    <File Include="img/UK_Flag.png">
+      <publishTime>11/21/2016 08:37:22</publishTime>
+    </File>
+    <File Include="img/vn_flag.png">
+      <publishTime>11/21/2016 08:37:22</publishTime>
+    </File>
+    <File Include="logo2.png">
+      <publishTime>11/21/2016 08:37:22</publishTime>
+    </File>
+    <File Include="logo5.png">
+      <publishTime>11/21/2016 08:37:22</publishTime>
+    </File>
+    <File Include="Models/Generated/PetaPoco.Core.ttinclude">
+      <publishTime>11/21/2016 08:36:55</publishTime>
+    </File>
+    <File Include="Models/Generated/PetaPoco.Generator.ttinclude">
+      <publishTime>11/21/2016 08:36:55</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>11/21/2016 08:37:22</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>05/15/2017 09:31:23</publishTime>
+    </File>
+    <File Include="Rotativa/wkhtmltopdf.exe">
+      <publishTime>11/21/2016 08:36:57</publishTime>
+    </File>
+    <File Include="Samples/352_CT-HCQTVAC.pdf">
+      <publishTime>11/21/2016 08:36:57</publishTime>
+    </File>
+    <File Include="Samples/CV4169_CTTTHT.pdf">
+      <publishTime>11/21/2016 08:36:57</publishTime>
+    </File>
+    <File Include="Samples/MauHDDT.pdf">
+      <publishTime>11/21/2016 08:36:57</publishTime>
+    </File>
+    <File Include="Samples/QD.pdf">
+      <publishTime>11/21/2016 08:36:57</publishTime>
+    </File>
+    <File Include="Samples/Thongbao.jpg">
+      <publishTime>11/21/2016 08:36:57</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-datepicker.js">
+      <publishTime>11/21/2016 08:36:52</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>11/21/2016 08:36:52</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>11/21/2016 08:36:52</publishTime>
+    </File>
+    <File Include="Scripts/Common.js">
+      <publishTime>02/14/2017 10:13:36</publishTime>
+    </File>
+    <File Include="Scripts/DatePickerReady.js">
+      <publishTime>11/21/2016 08:36:52</publishTime>
+    </File>
+    <File Include="Scripts/docs.min.js">
+      <publishTime>11/21/2016 08:36:52</publishTime>
+    </File>
+    <File Include="Scripts/Extension.js">
+      <publishTime>11/21/2016 08:36:52</publishTime>
+    </File>
+    <File Include="Scripts/ie10-viewport-bug-workaround.js">
+      <publishTime>11/21/2016 08:36:52</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>11/21/2016 08:36:52</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.js">
+      <publishTime>11/21/2016 08:36:52</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.map">
+      <publishTime>11/21/2016 08:36:52</publishTime>
+    </File>
+    <File Include="Scripts/jquery.blockUI.js">
+      <publishTime>11/21/2016 08:36:52</publishTime>
+    </File>
+    <File Include="Scripts/jquery.bootpag.min.js">
+      <publishTime>11/21/2016 08:36:52</publishTime>
+    </File>
+    <File Include="Scripts/jquery.cookie.js">
+      <publishTime>12/23/2016 15:08:35</publishTime>
+    </File>
+    <File Include="Scripts/jquery.min.js">
+      <publishTime>11/21/2016 08:36:52</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>11/21/2016 08:36:52</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>11/21/2016 08:36:52</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>11/21/2016 08:36:52</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>11/21/2016 08:36:52</publishTime>
+    </File>
+    <File Include="Scripts/jssor.slider.mini.js">
+      <publishTime>11/21/2016 08:36:52</publishTime>
+    </File>
+    <File Include="Scripts/modalform.js">
+      <publishTime>11/21/2016 08:36:52</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>11/21/2016 08:36:52</publishTime>
+    </File>
+    <File Include="Scripts/paqination/animate.css">
+      <publishTime>02/08/2017 11:48:36</publishTime>
+    </File>
+    <File Include="Scripts/paqination/jPages.css">
+      <publishTime>02/08/2017 11:48:36</publishTime>
+    </File>
+    <File Include="Scripts/paqination/jPages.js">
+      <publishTime>02/08/2017 11:48:36</publishTime>
+    </File>
+    <File Include="Scripts/paqination/style.css">
+      <publishTime>02/08/2017 11:48:36</publishTime>
+    </File>
+    <File Include="Scripts/paqination/tabifier.js">
+      <publishTime>02/08/2017 11:48:36</publishTime>
+    </File>
+    <File Include="Scripts/respond.js">
+      <publishTime>11/21/2016 08:36:52</publishTime>
+    </File>
+    <File Include="Scripts/respond.min.js">
+      <publishTime>11/21/2016 08:36:52</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Einvoice_Customer.ServiceReference1.ConfirmSigantureResponse.datasource">
+      <publishTime>11/21/2016 08:36:58</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Einvoice_Customer.ServiceReference1.convertForStoreFkeyResponse.datasource">
+      <publishTime>11/21/2016 08:36:58</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Einvoice_Customer.ServiceReference1.convertForStoreResponse.datasource">
+      <publishTime>11/21/2016 08:36:58</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Einvoice_Customer.ServiceReference1.convertForVerifyFkeyResponse.datasource">
+      <publishTime>11/21/2016 08:36:58</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Einvoice_Customer.ServiceReference1.convertForVerifyResponse.datasource">
+      <publishTime>11/21/2016 08:36:58</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Einvoice_Customer.ServiceReference1.downloadInvFkeyNoPayResponse.datasource">
+      <publishTime>11/21/2016 08:36:58</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Einvoice_Customer.ServiceReference1.downloadInvFkeyResponse.datasource">
+      <publishTime>11/21/2016 08:36:58</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Einvoice_Customer.ServiceReference1.downloadInvNoPayResponse.datasource">
+      <publishTime>11/21/2016 08:36:58</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Einvoice_Customer.ServiceReference1.downloadInvPDFFkeyNoPayResponse.datasource">
+      <publishTime>11/21/2016 08:36:58</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Einvoice_Customer.ServiceReference1.downloadInvPDFFkeyResponse.datasource">
+      <publishTime>11/21/2016 08:36:58</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Einvoice_Customer.ServiceReference1.downloadInvPDFNoPayResponse.datasource">
+      <publishTime>11/21/2016 08:36:58</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Einvoice_Customer.ServiceReference1.downloadInvPDFResponse.datasource">
+      <publishTime>11/21/2016 08:36:58</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Einvoice_Customer.ServiceReference1.downloadInvResponse.datasource">
+      <publishTime>11/21/2016 08:36:58</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Einvoice_Customer.ServiceReference1.getcatalogViewFkeyResponse.datasource">
+      <publishTime>11/21/2016 08:36:58</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Einvoice_Customer.ServiceReference1.getCatalogViewResponse.datasource">
+      <publishTime>11/21/2016 08:36:58</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Einvoice_Customer.ServiceReference1.getCusResponse.datasource">
+      <publishTime>11/21/2016 08:36:58</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Einvoice_Customer.ServiceReference1.getDigestResponse.datasource">
+      <publishTime>11/21/2016 08:36:58</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Einvoice_Customer.ServiceReference1.getInvViewFkeyNoPayResponse.datasource">
+      <publishTime>11/21/2016 08:36:58</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Einvoice_Customer.ServiceReference1.getInvViewFkeyResponse.datasource">
+      <publishTime>11/21/2016 08:36:58</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Einvoice_Customer.ServiceReference1.getInvViewNoPayResponse.datasource">
+      <publishTime>11/21/2016 08:36:58</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Einvoice_Customer.ServiceReference1.getInvViewResponse.datasource">
+      <publishTime>11/21/2016 08:36:58</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Einvoice_Customer.ServiceReference1.getStaffResponse.datasource">
+      <publishTime>11/21/2016 08:36:58</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Einvoice_Customer.ServiceReference1.listInvByCusFkeyResponse.datasource">
+      <publishTime>11/21/2016 08:36:58</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Einvoice_Customer.ServiceReference1.listInvByCusFkeyVNPResponse.datasource">
+      <publishTime>11/21/2016 08:36:58</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Einvoice_Customer.ServiceReference1.listInvByCusResponse.datasource">
+      <publishTime>11/21/2016 08:36:58</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Einvoice_Customer.ServiceReference1.SearchInvResponse.datasource">
+      <publishTime>11/21/2016 08:36:58</publishTime>
+    </File>
+    <File Include="Softs/EInvoiceViewer.exe">
+      <publishTime>11/21/2016 08:37:18</publishTime>
+    </File>
+    <File Include="Softs/JavaPlugin.exe">
+      <publishTime>11/21/2016 08:37:21</publishTime>
+    </File>
+    <File Include="Views/Account/ChangePassGuest.cshtml">
+      <publishTime>11/21/2016 08:36:53</publishTime>
+    </File>
+    <File Include="Views/Account/ChangePassGuests.cshtml">
+      <publishTime>11/21/2016 08:36:53</publishTime>
+    </File>
+    <File Include="Views/Account/ChangePassword.cshtml">
+      <publishTime>02/08/2017 11:48:35</publishTime>
+    </File>
+    <File Include="Views/Account/ChangePasswordFirst.cshtml">
+      <publishTime>11/21/2016 08:36:53</publishTime>
+    </File>
+    <File Include="Views/Account/ChangePasswordNotOK.cshtml">
+      <publishTime>11/30/2016 15:17:37</publishTime>
+    </File>
+    <File Include="Views/Account/ChangePasswordOK.cshtml">
+      <publishTime>11/30/2016 15:17:37</publishTime>
+    </File>
+    <File Include="Views/Account/ConfirmEmail.cshtml">
+      <publishTime>11/21/2016 08:36:53</publishTime>
+    </File>
+    <File Include="Views/Account/Edit.cshtml">
+      <publishTime>04/10/2017 16:00:57</publishTime>
+    </File>
+    <File Include="Views/Account/ExternalLoginConfirmation.cshtml">
+      <publishTime>11/21/2016 08:36:53</publishTime>
+    </File>
+    <File Include="Views/Account/ExternalLoginFailure.cshtml">
+      <publishTime>11/21/2016 08:36:53</publishTime>
+    </File>
+    <File Include="Views/Account/ForgotPassword.cshtml">
+      <publishTime>04/10/2017 16:00:57</publishTime>
+    </File>
+    <File Include="Views/Account/ForgotPasswordConfirmation.cshtml">
+      <publishTime>11/21/2016 08:36:53</publishTime>
+    </File>
+    <File Include="Views/Account/Login.cshtml">
+      <publishTime>11/30/2016 15:17:37</publishTime>
+    </File>
+    <File Include="Views/Account/Manage.cshtml">
+      <publishTime>11/21/2016 08:36:53</publishTime>
+    </File>
+    <File Include="Views/Account/Message.cshtml">
+      <publishTime>11/21/2016 08:36:53</publishTime>
+    </File>
+    <File Include="Views/Account/Profile.cshtml">
+      <publishTime>04/10/2017 16:00:57</publishTime>
+    </File>
+    <File Include="Views/Account/Register_.cshtml">
+      <publishTime>11/21/2016 08:36:53</publishTime>
+    </File>
+    <File Include="Views/Account/ResetPassword.cshtml">
+      <publishTime>11/21/2016 08:36:53</publishTime>
+    </File>
+    <File Include="Views/Account/ResetPasswordConfirmation.cshtml">
+      <publishTime>11/21/2016 08:36:53</publishTime>
+    </File>
+    <File Include="Views/Account/_ChangePasswordPartial.cshtml">
+      <publishTime>11/21/2016 08:36:53</publishTime>
+    </File>
+    <File Include="Views/Account/_ExternalLoginsListPartial.cshtml">
+      <publishTime>11/21/2016 08:36:53</publishTime>
+    </File>
+    <File Include="Views/Account/_RemoveAccountPartial.cshtml">
+      <publishTime>11/21/2016 08:36:53</publishTime>
+    </File>
+    <File Include="Views/Account/_SetPasswordPartial.cshtml">
+      <publishTime>11/21/2016 08:36:53</publishTime>
+    </File>
+    <File Include="Views/EinvoiceCustomer/EInvoiceCustomerItem.cshtml">
+      <publishTime>11/24/2016 11:16:41</publishTime>
+    </File>
+    <File Include="Views/EinvoiceCustomer/EInvoiceCustomerItemContent.cshtml">
+      <publishTime>05/10/2017 16:59:40</publishTime>
+    </File>
+    <File Include="Views/EinvoiceCustomer/Index.cshtml">
+      <publishTime>04/10/2017 16:00:58</publishTime>
+    </File>
+    <File Include="Views/EinvoiceCustomer/ListByDate.cshtml">
+      <publishTime>11/21/2016 08:36:52</publishTime>
+    </File>
+    <File Include="Views/EinvoiceCustomer/Message.cshtml">
+      <publishTime>11/21/2016 08:36:52</publishTime>
+    </File>
+    <File Include="Views/EinvoiceCustomer/_ListPDF.cshtml">
+      <publishTime>02/08/2017 11:48:35</publishTime>
+    </File>
+    <File Include="Views/EinvoiceCustomer/_popupInvoice.cshtml">
+      <publishTime>05/10/2017 16:52:43</publishTime>
+    </File>
+    <File Include="Views/Home/About.cshtml">
+      <publishTime>11/21/2016 08:36:53</publishTime>
+    </File>
+    <File Include="Views/Home/Contact.cshtml">
+      <publishTime>11/21/2016 08:36:53</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>05/12/2017 15:37:18</publishTime>
+    </File>
+    <File Include="Views/Home/Soft.cshtml">
+      <publishTime>11/21/2016 08:36:53</publishTime>
+    </File>
+    <File Include="Views/Home/Support.cshtml">
+      <publishTime>11/21/2016 08:36:53</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>11/21/2016 08:36:52</publishTime>
+    </File>
+    <File Include="Views/Shared/NotFound.cshtml">
+      <publishTime>11/21/2016 08:36:52</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>05/12/2017 15:37:19</publishTime>
+    </File>
+    <File Include="Views/Shared/_LayoutLogin.cshtml">
+      <publishTime>11/21/2016 08:36:52</publishTime>
+    </File>
+    <File Include="Views/Shared/_LayoutPDF.cshtml">
+      <publishTime>11/21/2016 08:36:52</publishTime>
+    </File>
+    <File Include="Views/Shared/_LoginLayout.cshtml">
+      <publishTime>02/08/2017 11:48:35</publishTime>
+    </File>
+    <File Include="Views/Shared/_LoginPartial.cshtml">
+      <publishTime>11/21/2016 08:36:52</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>11/21/2016 08:36:53</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>11/21/2016 08:36:53</publishTime>
+    </File>
+    <File Include="Web References/HDDT.PortalService/Reference.map">
+      <publishTime>05/08/2017 10:01:13</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>05/15/2017 09:31:20</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

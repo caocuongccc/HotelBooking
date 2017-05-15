@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+@using Microsoft.AspNet.Identity
+@*@using Microsoft.AspNet.Identity
+    @model Einvoice_Customer.Models.ChangePasswordViewModel*@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - @Einvoice_Customer.Language.Resource.InvoiceReseach</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.min.css" />
+   
+    @*@Styles.Render("~/Content/css")*@
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap-datepicker.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/style3.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/site.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/responsive.css" />
+    @*<script type="text/javascript" src="~/Content/js/less.js"></script>*@
+    
+    @*<link rel="stylesheet" type="text/css" href="~/Content/hoadon_style.css" />*@
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery.cookie.js" type="text/javascript"></script>
+    @*<link href="//fonts.googleapis.com/css?family=Roboto+Slab&amp;subset=latin,vietnamese" rel="stylesheet" type="text/css">*@
+    @*@Scripts.Render("~/bundles/jquery")*@
+</head>
+<body>
+    <section class="header">
+        
+            @if (Request.IsAuthenticated)
+            {
+                <div class="nav-login" style="z-index:3;">
+                    @Html.Partial("_LoginPartial")
+                </div>
+            }
+            else
+            {
+                <div class="nav-login" style="z-index:3;">
+                    <a href="#loginForm" data-target="#loginForm" data-toggle="modal" title="@Einvoice_Customer.Language.Resource.login">@Einvoice_Customer.Language.Resource.login</a>
+                </div>
+                 @Html.Partial("_LoginLayout")
+            }
+                    
+        <div class="logo">
+            <div class="language_flag">
+                @Html.ActionLink("VI", "ChangLanguage", "ChangLanguage", new { culture = "vi", area = "" }, new { @*@style = "background-image:url('/img/vn_flag.png');background-size:cover; background-position:center; padding: 5px 20px; margin-right: 10px;cursor:pointer ;border-radius:3px;",*@ @title = "Tiếng Việt" })
+                @Html.ActionLink("EN", "ChangLanguage", "ChangLanguage", new { culture = "en", area = "" }, new { @style = "margin-left: 5px;", @title = "English" })
+            </div>
+            <div class="logoimg">
+                <a href="/"><img src="/img/logo.png" alt="logo" /></a>
+            </div>
+            <ul class="cb-slideshow list-unstyled">
+                <li><span></span><div></div></li>
+                <li><span></span><div></div></li>
+                <li><span></span><div></div></li>
+                <li><span></span><div></div></li>
+            </ul>
+            <script>
+                if ($(window.location).attr('pathname') != '/')
+                {
+                    $('.cb-slideshow').after('<div class="slide_banner"></div>');
+                    $('.slide_banner').css({
+                        'background-image': 'url("/content/images/01.jpg")',
+                        'height': '40vh',
+                        'width': '100%',
+                        'background-position': 'top center',
+                        'background-size':'cover'
+                    });
+                    $('.cb-slideshow').remove();
+                }
+            </script>
+            @*<div class="banner">
+                <img src="/img/img.jpg" style="width: 100%" />
+            </div>*@    
+        </div>
+    </section>
+    <section class="main-content">
+        <div class="container">
+                @RenderBody()
+        </div>
+    </section>
+    <script>
+        if ($(window.location).attr('pathname') != '/') {
+            $('.main-content').css({
+                'min-height':'60vh'
+            });
+        }
+    </script>
+    <footer>
+        <div class="container">
+            
+            <div class="col-xs-12 col-sm-3 col-lg-2 col-md-3 logo-footer text-center">
+                <img src="/img/logo.png" alt="logo" />
+            </div>
+            <div class="col-xs-12 col-md-5 col-lg-7 col-sm-5">
+                <h4>
+                    @Einvoice_Customer.Language.Resource.name
+                </h4>
+                <p>
+                    <b> @Einvoice_Customer.Language.Resource.add:</b>@Einvoice_Customer.Language.Resource.addval<br />
+                    <b>@Einvoice_Customer.Language.Resource.Phone: </b>+84 (0) 54 3695 881<br/>
+                    @*<b>Email: </b><a href="mailto:Reservations.ICDanang@ihg.com"> Reservations.ICDanang@ihg.com</a>
+    <br />*@
+    @*@Einvoice_Customer.Language.Resource.Address<br />
+        @Einvoice_Customer.Language.Resource.Tel<br />
+        @Einvoice_Customer.Language.Resource.Fax<br />
+        Website: <a href="//www.furamavietnam.com" target="_blank" style="color:white">www.furamavietnam.com</a><br />
+        Pages:  <a href="//www.furamavietnam.com" target="_blank" style="color:white">Home</a> | <a href="https://www.facebook.com/furamaresort/?fref=ts" target="_blank" style="color:white">Facebook</a> | <a href="https://www.tripadvisor.com.vn/Hotel_Review-g298085-d302750-Reviews-s1-Furama_Resort_Danang-Da_Nang_Quang_Nam_Province.html" target="_blank" style="color:white">Tripadvisor</a>*@
+</p>
+                
+            </div>
+            <div class="col-xs-12 col-md-4 col-lg-3 col-sm-4">
+                <p class="vnpt_info" style="color: #e87511">&copy; @*@DateTime.Now.Year -*@ <b> @Einvoice_Customer.Language.Resource.designedby</b></p>
+            </div>
+                <div class="clearfix"></div>
+            </div>
+    </footer>
+    
+
+
+
+
+
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script>
+
+        $(document).ready(function () {
+            var pathname = $(location).attr('pathname').slice();
+            var treeview_active = pathname.slice(pathname.lastIndexOf('/') + 1);
+            //console.log(pathname);
+            //console.log(treeview_active);
+            function viewport() {
+                var e = window, a = 'inner';
+                if (!('innerWidth' in window)) {
+                    a = 'client';
+                    e = document.documentElement || document.body;
+                }
+                return { width: e[a + 'Width'], height: e[a + 'Height'] };
+            };
+            if (viewport().width > 991) {
+                if (pathname != '/' && pathname!='/home/index') {
+                    var animateto = $(".logo").height();
+                    //$('html, body').animate({
+                    //    scrollTop: animateto
+                    //});
+                    $(window).scrollTop(animateto);
+                }
+                    if (treeview_active == "About") {
+                        $('.menu-top > li:nth-child(1) > a').addClass('active');
+                    }
+                    if (treeview_active == "Soft") {
+                        $('.menu-top > li:nth-child(2) > a').addClass('active');
+                    }
+                    if (treeview_active == "Profile") {
+                        $('.menu-top > li:nth-child(3) > a').addClass('active');
+                    }
+                    if (treeview_active == "Support") {
+                        $('.menu-top > li:nth-child(4) > a').addClass('active');
+                    }
+                    if (treeview_active == "Contact") {
+                        $('.menu-top > li:nth-child(5) > a').addClass('active');
+                    }
+                    if (treeview_active == "EinvoiceCustomer") {
+                        $('.menu-top > li:nth-child(6) > a').addClass('active');
+                    }
+                }
+        });
+    </script>
+</body>
+</html>

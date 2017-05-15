@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="https://vdkadmin.vnpt-invoice.com.vn/Portalservice.asmx?wsdl" docRef="https://vdkadmin.vnpt-invoice.com.vn/Portalservice.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="https://vdkadmin.vnpt-invoice.com.vn/Portalservice.asmx" xmlns:q1="http://tempuri.org/" binding="q1:PortalServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="https://vdkadmin.vnpt-invoice.com.vn/Portalservice.asmx" xmlns:q2="http://tempuri.org/" binding="q2:PortalServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

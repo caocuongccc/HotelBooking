@@ -1,0 +1,142 @@
+﻿@media (min-width: 992px) and (max-width:1199px){
+    /*.nav > li > a{
+        padding:10px;
+    }*/
+    
+    /*.navbar_top .navbar-nav > li > a{
+        padding: 27px 2px;
+        font-size:14px
+    }*/
+    .navbar_top .navbar-nav>li>a:after{
+        bottom:27px;
+    }
+    .mr{
+        margin-left:-15px;
+    }
+}
+@media (max-width: 1199px){
+    /*.navbar_top .navbar-header a > img{
+        width:40px;
+    }*/
+    .navbar_top .navbar-header a > span{
+        font-size: 14px;
+        top:0;
+    }
+        .hello-text{
+        display:none;
+    }
+   /*.logo .language_flag{      
+        top:5px;
+    }*/
+    .nav-login{
+        right:10%;
+    }
+    .nav-login{
+        top:80px;
+    }
+}
+
+@media(max-width:991px){
+    /*.right-banner{
+        margin-left:-15px;
+    }
+    .login{
+        margin-left:-15px;
+    }
+    .bill-list{
+        margin-top:27px;
+    }*/
+    
+    .logo{
+        overflow: hidden;
+       
+    }
+    .logo embed{
+        position: relative;
+        bottom: 150px;
+        left: 0;
+    }
+    /*.nav-login{      
+        right:0;
+    }*/
+    /*.logo{
+        background: url(../img/banner2.jpg) no-repeat -415px -150px;
+    }*/
+    /*.navbar_top .navbar-nav > li > a{
+        padding: 10px 5px;
+        position:initial
+    }*/
+    .navbar_top .navbar-nav>li>a:after{
+        content:none;
+    }
+    /*.navbar_top{
+        background: rgba(0,104,124,1);
+    }*/
+}
+
+@media(max-width:767px){
+    .logoimg{
+        top: 40px;
+        left: 10%;
+    }
+    
+    .logo .language_flag{
+        top: 40px;
+    }
+    .hello-text{
+        display:none;
+    }
+    .logo{
+        overflow: hidden;
+        
+    }
+    .logo embed{
+        position: relative;
+        bottom: 229px;
+        left: 0;
+    }
+    /*.logo{
+        background:url('../img/banner2.jpg') no-repeat -618px -150px;
+    }*/
+    /*.bill-list{
+        margin-top:10px;
+    }*/
+    .navbar_top{
+        background: rgba(0,104,124,1);
+        position:static;
+    }
+    .navbar_top .navbar-header{
+        text-align:left;
+        margin:10px 0;
+    }
+    .navbar_top .navbar-header a > img{
+        width:50px;
+    }
+    .navbar-toggle{
+        margin-top:15px;
+    }
+    .menu-top{
+        display:block;
+        border:none;
+        background-image:none;
+    }
+    .navbar_top .navbar-nav > li{
+        background:none;
+    }
+}
+
+@media (max-width: 452px) {
+    /*.username {
+        display: none !important;
+    }
+
+    .navbar-nav>li>.dropdown-menu {
+        left:-88px;
+    }
+    .logo img{
+        width:150px;
+    }*/
+}
+@media (max-width: 350px) {
+
+}

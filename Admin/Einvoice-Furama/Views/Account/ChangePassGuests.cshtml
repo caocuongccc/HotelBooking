@@ -1,0 +1,94 @@
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<HDDT_FURAMA.Customer>
+
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+
+
+@{
+    ViewBag.Title = Einvoice_Customer.Language.Resource.ListCustomer;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    int stt = 0;
+    if (Model.PageNumber == 1)
+    {
+        stt = Model.PageNumber;
+    }
+    else
+    {
+        stt = (Model.PageNumber - 1) * Model.PageSize + 1;
+    }
+}
+
+<h2>@ViewBag.Title</h2>
+
+<table class="table table-striped table-hover ">
+
+    <tr>
+        
+        <th>
+            @Einvoice_Customer.Language.Resource.Stt    
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.name)*@
+            Họ Tên / Doanh Nghiệp 
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.pattern)*@
+            Địa Chỉ
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.serial)*@
+            Email
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.invnum)*@
+            Điện Thoại
+        </th>
+        
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @stt
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+           
+            <td>
+                <span class="label label-info">
+                    @Html.ActionLink("Đổi mật khẩu",
+                                         "ChangePassGuest",
+                                         new { id = @item.Id },
+                                         new { title = "Đổi mật khẩu", style = "color:white; text-decoration:none;" })
+                </span>
+               
+            </td>
+        </tr>
+
+        stt += 1;
+    }
+
+</table>
+
+<div class="row">
+    <div class="col-md-8">
+        Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) trong tổng số @Model.PageCount trang
+        @Html.PagedListPager(Model, Page => Url.Action("Index", new { Page }), PagedListRenderOptions.ClassicPlusFirstAndLast)
+    </div>
+    <div class="col-md-4 text-right">
+        
+    </div>
+</div>

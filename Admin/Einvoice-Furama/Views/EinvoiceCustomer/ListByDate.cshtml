@@ -1,0 +1,206 @@
+﻿
+@* Hiển thị danh sách hóa đơn khi tìm kiếm (button Liệt kê) hay khi bấm vào nút phân trang trong kết qủa tìm kiếm.
+       
+    *@
+
+@using PagedList.Mvc;
+@model PagedList.IPagedList<Einvoice_Customer.Models.EinvoiceCustomerViewModel>
+
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+
+@{
+    ViewBag.Title = Einvoice_Customer.Language.Resource.ListBill;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    int stt = 0;
+    if (Model.PageNumber == 1)
+    {
+        stt = Model.PageNumber;
+    }
+    else
+    {
+        stt = (Model.PageNumber - 1) * Model.PageSize + 1;
+    }
+    DateTime? fromdate = ViewBag.fromServiceDate;// DateTime.ParseExact(ViewBag.FromDate, "dd/MM/YYYY", null);// Convert.ToDateTime(ViewBag.FromDate);
+    DateTime? todate = ViewBag.toServiceDate;// DateTime.ParseExact(ViewBag.ToDate, "dd/MM/YYYY", null);// Convert.ToDateTime(ViewBag.ToDate);
+
+}
+
+<p class="text-primary">
+    <br />
+    <h4>
+        <span class="glyphicon glyphicon-th"></span>
+        <b>
+            @Einvoice_Customer.Language.Resource.ListBill : @ViewBag.TenDonVi.ToUpper()
+        </b>
+    </h4>
+</p>
+<hr />
+
+@using (Html.BeginForm("listbydate/", "EinvoiceCustomer", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+    <table align="right">
+        <tr>
+            <td>Xem từ ngày&nbsp;&nbsp;</td>
+            <td>@Html.TextBox("fromdate", String.Format("{0:dd-MM-yyyy}",fromdate), new { @class = "form-control datecontrol" })</td>
+            <td>&nbsp;&nbsp;Đến ngày&nbsp;&nbsp;</td>
+            <td>@Html.TextBox("todate", String.Format("{0:dd-MM-yyyy}", todate), new { @class = "form-control datecontrol" })</td>
+            <td>&nbsp;&nbsp;<input type="submit" value="Liệt Kê" class="btn btn-default" /></td>
+        </tr>
+    </table>
+    <br />
+    <br />
+    <br />
+    <table class="table table-striped table-hover ">
+
+        <tr>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.index)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.invToken)
+                </th>*@
+                    <th>
+                        @Einvoice_Customer.Language.Resource.Stt
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.name)*@
+                        @Einvoice_Customer.Language.Resource.TenHoaDon
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.pattern)*@
+                        @Einvoice_Customer.Language.Resource.MauSo
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.serial)*@
+                        @Einvoice_Customer.Language.Resource.KyHieu
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.invnum)*@
+                        @Einvoice_Customer.Language.Resource.SoHoaDon
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.amount)*@
+                        @Einvoice_Customer.Language.Resource.TongTien
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.publishdate)*@
+                        @Einvoice_Customer.Language.Resource.NgayXuat
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.signstatus)*@
+                        @Einvoice_Customer.Language.Resource.XemHoaDon
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.payment)*@
+                        @Einvoice_Customer.Language.Resource.ThanhToan
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.status)*@
+                        @Einvoice_Customer.Language.Resource.TrangThai
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+
+                    <tr>
+                        @*<td>
+                        @Html.DisplayFor(modelItem => item.index)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.invToken)
+                    </td>*@
+                        <td>
+                            @stt
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.pattern)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.serial)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.invnum)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.amount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.publishdate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.signstatus)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.payment)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.status)
+                        </td>
+                        <td>
+                            <span class="btn btn-success btn-sm">
+                                @Html.ActionLink(" ",
+                                         "View",
+                                         new { id = 1, token = @item.invToken, paymentstatus = @item.paymentstatus },
+                                   new { @class = "glyphicon glyphicon-search note", data_modal = "", title = "ChiTietHoaDon", style = "color:white; text-decoration:none;margin: -5px; padding: 4px;" })
+                            </span>
+                            @*&nbsp;*@
+                            <span class="btn btn-danger btn-sm">
+                                @Html.ActionLink(" ",
+                                         "ViewPDF",
+                                         new { token = @item.invToken, paymentstatus = @item.paymentstatus },
+                                      new { @class = "glyphicon glyphicon-file note ico pdf_ico", title = "XemPDF", style = "color:white; text-decoration:none;" })
+                            </span>
+                            @*&nbsp;*@
+                            <span class="btn btn-warning btn-sm">
+                                @Html.ActionLink(" ",
+                                         "ViewINV",
+                                         new { token = @item.invToken, paymentstatus = @item.paymentstatus },
+                                      new { @class = "glyphicon glyphicon-file note ico ivn_ico", title = "DownloadInv", style = "color:white; text-decoration:none;" })
+                            </span>
+
+                        </td>
+                    </tr>
+
+            stt += 1;
+        }
+
+    </table>
+
+    <!-- modal placeholder-->
+    <div id='myModal' class='modal fade in'>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div id='myModalContent'></div>
+            </div>
+        </div>
+    </div>
+}
+
+        @{
+            string Fdate = ViewBag.fromServiceDate;
+            string Tdate = ViewBag.toServiceDate;
+        }
+
+        
+<div class="row">
+    <div class="col-md-8">
+        @Einvoice_Customer.Language.Resource.Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) @Einvoice_Customer.Language.Resource.InTotal @Model.PageCount @Einvoice_Customer.Language.Resource.Page.ToLower()
+        @Html.PagedListPager(Model, Page => Url.Action("ListByDateFromTo", new { Fdate, Tdate, Page }), PagedListRenderOptions.ClassicPlusFirstAndLast)
+    </div>
+    <div class="col-md-4 text-right" style="margin-bottom:10px">
+        <span class="btn bill-list btn-sm">
+            <a href="/EinvoiceCustomer/ListByDateFromTo?Fdate=@Fdate&Tdate=@Tdate&pdf=true" style="text-decoration:none; color:white;" target="_blank">@Einvoice_Customer.Language.Resource.ListInvByPDF</a>
+        </span>
+    </div>
+</div>
+        @section Scripts {
+            @Scripts.Render("~/bundles/modalform")
+        }

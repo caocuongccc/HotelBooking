@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+
+@using Microsoft.AspNet.Identity
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Tra Cứu Hóa Đơn</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                  @Html.ActionLink("VNPT PORTAL", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })                
+            </div>
+           
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <div class="col-xs-2 text-left">
+                <img src="~/logo2.png" alt="Toyota Logo" />
+            </div>
+            <div class="col-xs-8">
+                <p class="text-primary">
+                    <b>VNPT PORTAL</b>
+                </p>
+                <p class="text-primary">
+                    Địa chỉ (Add):  Tòa nhà VNPT, Số 344 đường 2.9, Đà Nẵng, Việt Nam
+                </p>
+                <p class="text-primary">
+                    Mã số thuế (Tax code): 0106869738009<br />
+                    Số tài khoản VNĐ:  2000.311.01.0051 tại   Ngân hàng Nông nghiệp và Phát triển Nông thôn – TP. Đà Nẵng
+                </p>
+                <p>&copy; @DateTime.Now.Year - <b>VNPT - PORTAL - Tra Cứu Hóa Đơn</b></p>
+            </div>
+            <div class="col-xs-2 text-right">
+                @*<img src="~/toyota-logo.png" alt="Toyota Logo" />*@
+            </div>
+
+
+        </footer>
+        
+
+    </div>
+   
+
+   
+    @RenderSection("scripts", required: false)
+
+
+</body>
+</html>

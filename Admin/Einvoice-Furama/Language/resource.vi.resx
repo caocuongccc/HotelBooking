@@ -1,0 +1,522 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Address" xml:space="preserve">
+    <value>Địa chỉ: 105 Võ Nguyên Giáp, P. Khuê Mỹ, Q. Ngũ Hành Sơn, Tp. Đà Nẵng</value>
+  </data>
+  <data name="ChiTietHoaDon" xml:space="preserve">
+    <value>Xem chi tiết hóa đơn.</value>
+  </data>
+  <data name="ChuaPhatHanh" xml:space="preserve">
+    <value>Chưa phát hành</value>
+  </data>
+  <data name="ChuaThanhToan" xml:space="preserve">
+    <value>Chưa thanh toán</value>
+  </data>
+  <data name="ChuaXem" xml:space="preserve">
+    <value>Chưa xem</value>
+  </data>
+  <data name="DangNhap" xml:space="preserve">
+    <value>Đăng Nhập</value>
+  </data>
+  <data name="DaPhatHanh" xml:space="preserve">
+    <value>Đã phát hành</value>
+  </data>
+  <data name="DaThanhToan" xml:space="preserve">
+    <value>Đã thanh toán</value>
+  </data>
+  <data name="DaXem" xml:space="preserve">
+    <value>Đã xem</value>
+  </data>
+  <data name="Fax" xml:space="preserve">
+    <value>Fax: (0511) 3 847 666</value>
+  </data>
+  <data name="FromDate" xml:space="preserve">
+    <value>Từ ngày</value>
+  </data>
+  <data name="InTotal" xml:space="preserve">
+    <value>trong tổng số</value>
+  </data>
+  <data name="KyHieu" xml:space="preserve">
+    <value>Ký Hiệu</value>
+  </data>
+  <data name="Listed" xml:space="preserve">
+    <value>Liệt kê</value>
+  </data>
+  <data name="ListInvByPDF" xml:space="preserve">
+    <value>Xuất Danh Sách Hóa Đơn Dạng PDF</value>
+  </data>
+  <data name="MauSo" xml:space="preserve">
+    <value>Mẫu Số</value>
+  </data>
+  <data name="NgayXuat" xml:space="preserve">
+    <value>Ngày lập</value>
+  </data>
+  <data name="Page" xml:space="preserve">
+    <value>Trang</value>
+  </data>
+  <data name="Remember" xml:space="preserve">
+    <value>Ghi nhớ ?</value>
+  </data>
+  <data name="SoHoaDon" xml:space="preserve">
+    <value>Số Hóa Đơn</value>
+  </data>
+  <data name="Stt" xml:space="preserve">
+    <value>Stt</value>
+  </data>
+  <data name="Tel" xml:space="preserve">
+    <value>Điện thoại: (0511) 3 847 333</value>
+  </data>
+  <data name="TenHoaDon" xml:space="preserve">
+    <value>Tên Hóa Đơn</value>
+  </data>
+  <data name="ThanhToan" xml:space="preserve">
+    <value>Thanh Toán</value>
+  </data>
+  <data name="ToDate" xml:space="preserve">
+    <value>đến ngày</value>
+  </data>
+  <data name="TongTien" xml:space="preserve">
+    <value>Tổng Tiền</value>
+  </data>
+  <data name="TrangThai" xml:space="preserve">
+    <value>Trạng Thái</value>
+  </data>
+  <data name="VATInvoice" xml:space="preserve">
+    <value>Hóa đơn giá trị gia tăng</value>
+  </data>
+  <data name="ViewFromDate" xml:space="preserve">
+    <value>Xem từ ngày</value>
+  </data>
+  <data name="Web" xml:space="preserve">
+    <value>Website: &lt;a href="www.furamavietnam.com"&gt;www.furamavietnam.com&lt;/a&gt;</value>
+  </data>
+  <data name="XemHoaDon" xml:space="preserve">
+    <value>Xem hóa đơn</value>
+  </data>
+  <data name="XemPDF" xml:space="preserve">
+    <value>Xem dạng PDF.</value>
+  </data>
+  <data name="Account" xml:space="preserve">
+    <value>Tên tài khoản</value>
+  </data>
+  <data name="Addr" xml:space="preserve">
+    <value>Địa chỉ</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Quay lại</value>
+  </data>
+  <data name="BankAccountName" xml:space="preserve">
+    <value>Tên chủ tài khoản ngân hàng</value>
+  </data>
+  <data name="BankName" xml:space="preserve">
+    <value>Tên ngân hàng</value>
+  </data>
+  <data name="BankNumber" xml:space="preserve">
+    <value>Số tài khoản</value>
+  </data>
+  <data name="ChangePass" xml:space="preserve">
+    <value>Đổi mật khẩu</value>
+  </data>
+  <data name="ChangePassFirst" xml:space="preserve">
+    <value>Đổi mật khẩu cho lần đầu đăng nhập</value>
+  </data>
+  <data name="ChangePassText" xml:space="preserve">
+    <value>(Với lần đăng nhập đầu tiên, bạn nên đổi mật khẩu mặc định đã được cung cấp để đảm bảo tính &lt;b&gt;an toàn&lt;/b&gt; !!! )</value>
+  </data>
+  <data name="ContactPerson" xml:space="preserve">
+    <value>Người đại diện:</value>
+  </data>
+  <data name="CusCode" xml:space="preserve">
+    <value>Mã khách hàng</value>
+  </data>
+  <data name="CusName" xml:space="preserve">
+    <value>Tên khách hàng</value>
+  </data>
+  <data name="CusType" xml:space="preserve">
+    <value>Mã số khách hàng :</value>
+  </data>
+  <data name="EditProfile" xml:space="preserve">
+    <value>Sửa thông tin</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Thư điện tử</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Thoát</value>
+  </data>
+  <data name="ForgotPass" xml:space="preserve">
+    <value>Quên mật khẩu</value>
+  </data>
+  <data name="Hello" xml:space="preserve">
+    <value>Xin chào</value>
+  </data>
+  <data name="Index" xml:space="preserve">
+    <value>Trang chủ</value>
+  </data>
+  <data name="InforCus" xml:space="preserve">
+    <value>Thông tin khách hàng</value>
+  </data>
+  <data name="Introduce" xml:space="preserve">
+    <value>Giới thiệu</value>
+  </data>
+  <data name="InvoiceReseach" xml:space="preserve">
+    <value>Cổng tra cứu hóa đơn</value>
+  </data>
+  <data name="ListBill" xml:space="preserve">
+    <value>Danh sách hóa đơn của :</value>
+  </data>
+  <data name="ListCustomer" xml:space="preserve">
+    <value>Danh sách khách hàng</value>
+  </data>
+  <data name="LoginSystem" xml:space="preserve">
+    <value>Đăng nhập hệ thống</value>
+  </data>
+  <data name="MST" xml:space="preserve">
+    <value>Mã số thuế</value>
+  </data>
+  <data name="NewPass" xml:space="preserve">
+    <value>Mật khẩu mới</value>
+  </data>
+  <data name="NoteFromSystem" xml:space="preserve">
+    <value>Thông báo từ chương trình</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Điện thoại</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Thông tin</value>
+  </data>
+  <data name="RecentPass" xml:space="preserve">
+    <value>Mật khẩu hiện tại</value>
+  </data>
+  <data name="ReNewPass" xml:space="preserve">
+    <value>Nhập lại mật khẩu mới</value>
+  </data>
+  <data name="RepresentPerson" xml:space="preserve">
+    <value>Người đại diện: </value>
+  </data>
+  <data name="ResetPassText" xml:space="preserve">
+    <value>Nhập mã khách hàng để cài đặt lại mật khẩu?</value>
+  </data>
+  <data name="taikhoan" xml:space="preserve">
+    <value>Tài khoản</value>
+  </data>
+  <data name="TaxCode" xml:space="preserve">
+    <value>Mã số khách hàng</value>
+  </data>
+  <data name="Toviewinv" xml:space="preserve">
+    <value>để xem hóa đơn.</value>
+  </data>
+  <data name="Youmust" xml:space="preserve">
+    <value>Bạn phải</value>
+  </data>
+  <data name="NotExist" xml:space="preserve">
+    <value>Không tồn tại tài khoản này trên hệ thống. Quý khách vui lòng liên hệ bộ phận hỗ trợ để được hỗ trợ.</value>
+  </data>
+  <data name="NotSend" xml:space="preserve">
+    <value>Không thể gửi mật khẩu vì tài khoản này chưa có e-mail trên hệ thống. Quý khách vui lòng liên hệ bộ phận hỗ trợ để được hỗ trợ.</value>
+  </data>
+  <data name="SendOK1" xml:space="preserve">
+    <value>Khôi phục mật khẩu thành công . Quý khách hàng vui lòng truy cập e-mail</value>
+  </data>
+  <data name="SendOK2" xml:space="preserve">
+    <value> để kiểm tra thông tin tài khoản.</value>
+  </data>
+  <data name="ChangePassCus" xml:space="preserve">
+    <value>Đổi mật khẩu khách hàng :</value>
+  </data>
+  <data name="PageHome" xml:space="preserve">
+    <value>Pages:  Home | Facebook | Tripadvisor</value>
+  </data>
+  <data name="Error1" xml:space="preserve">
+    <value>Tài khoản hoặc mật khẩu chưa đúng. Vui lòng nhập lại</value>
+  </data>
+  <data name="Error3" xml:space="preserve">
+    <value>Tài khoản này chưa có hóa đơn phát sinh</value>
+  </data>
+  <data name="CancelProcess" xml:space="preserve">
+    <value>Hủy thao tác</value>
+  </data>
+  <data name="HasBill" xml:space="preserve">
+    <value>Hóa đơn đã thanh toán</value>
+  </data>
+  <data name="InvoiceNormal" xml:space="preserve">
+    <value>Hóa đơn thông thường</value>
+  </data>
+  <data name="NotBill" xml:space="preserve">
+    <value>Hóa đơn chưa thanh toán</value>
+  </data>
+  <data name="SaveChanged" xml:space="preserve">
+    <value>Lưu thay đổi</value>
+  </data>
+  <data name="Matkhau" xml:space="preserve">
+    <value>Mật khẩu</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Trang trước</value>
+  </data>
+  <data name="Return" xml:space="preserve">
+    <value>Quay lại</value>
+  </data>
+  <data name="TenDangNhap" xml:space="preserve">
+    <value>Tên đăng nhập</value>
+  </data>
+  <data name="Remember1" xml:space="preserve">
+    <value>Ghi nhớ ?</value>
+  </data>
+  <data name="accountnotExist" xml:space="preserve">
+    <value>Tên đăng nhập hoặc mật khẩu không đúng.</value>
+  </data>
+  <data name="errorConfirmEmail" xml:space="preserve">
+    <value>Xác nhận Email thất bại</value>
+  </data>
+  <data name="ErrorPass" xml:space="preserve">
+    <value>Tên đăng nhập hoặc mật khẩu không đúng.</value>
+  </data>
+  <data name="alertCheckagain" xml:space="preserve">
+    <value>Tài khoản không đúng. Quý khách vui lòng kiểm tra lại tài khoản.</value>
+  </data>
+  <data name="userNotFound" xml:space="preserve">
+    <value>Không tìm thấy tài khoản</value>
+  </data>
+  <data name="changedpass" xml:space="preserve">
+    <value>Mật khẩu của bạn đã được thay đổi</value>
+  </data>
+  <data name="createdpass" xml:space="preserve">
+    <value>Mật khẩu của bạn đã được tạo</value>
+  </data>
+  <data name="erroroccurred" xml:space="preserve">
+    <value>Xuất hiện một lỗi</value>
+  </data>
+  <data name="alertNewPass" xml:space="preserve">
+    <value>Thông báo mật khẩu mới</value>
+  </data>
+  <data name="alertNewPass1" xml:space="preserve">
+    <value>xin trân trọng thông báo quý khách vừa thay đổi mật khẩu trên hệ thống hóa đơn điện tử. Mật khẩu mới là: </value>
+  </data>
+  <data name="alertNewPass2" xml:space="preserve">
+    <value>Quý khách vui lòng truy cập</value>
+  </data>
+  <data name="alertNewPass3" xml:space="preserve">
+    <value>để thay đổi mật khẩu.</value>
+  </data>
+  <data name="cantSendpass" xml:space="preserve">
+    <value>Không thể gửi mật khẩu vì tài khoản này chưa có e-mail trên hệ thống. Quý khách vui lòng liên hệ bộ phận hỗ trợ để được hỗ trợ.</value>
+  </data>
+  <data name="usernotExist" xml:space="preserve">
+    <value>Tên đăng nhập (mã khách hàng) không đúng.</value>
+  </data>
+  <data name="add" xml:space="preserve">
+    <value>Địa chỉ</value>
+  </data>
+  <data name="addval" xml:space="preserve">
+    <value>Thôn Cù Dù, Xã Lộc Vĩnh, Huyện Phú Lộc, Tỉnh Thừa Thiên Huế, Việt Nam</value>
+  </data>
+  <data name="enterSearchinvoice" xml:space="preserve">
+    <value>Nhập mã kiểm tra nhanh hóa đơn</value>
+  </data>
+  <data name="InvoiceNotFound" xml:space="preserve">
+    <value>Không tìm thấy hóa đơn</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>Đăng nhập</value>
+  </data>
+  <data name="name" xml:space="preserve">
+    <value>Công ty TNHH LAGUNA(VIỆT NAM)</value>
+  </data>
+  <data name="notpayinvoice" xml:space="preserve">
+    <value>Hóa đơn bạn chọn chưa thanh toán. Vui lòng thanh toán hóa đơn !</value>
+  </data>
+  <data name="nullinvhash" xml:space="preserve">
+    <value>Vui lòng nhập mã số hóa đơn</value>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>Tìm kiếm</value>
+  </data>
+  <data name="searchinvoice" xml:space="preserve">
+    <value>KIỂM TRA NHANH HÓA ĐƠN</value>
+  </data>
+  <data name="ConfirmPass" xml:space="preserve">
+    <value>Xác nhận mật khẩu mới</value>
+  </data>
+  <data name="CurPass" xml:space="preserve">
+    <value>Mật khẩu hiện tại</value>
+  </data>
+  <data name="EnterAddr" xml:space="preserve">
+    <value>Chưa nhập địa chỉ</value>
+  </data>
+  <data name="EnterCusName" xml:space="preserve">
+    <value>Chưa nhập tên khách hàng</value>
+  </data>
+  <data name="enternewpass" xml:space="preserve">
+    <value>Chưa nhập mật khẩu mới</value>
+  </data>
+  <data name="EnterPass" xml:space="preserve">
+    <value>Chưa nhập mật khẩu</value>
+  </data>
+  <data name="EnterUser" xml:space="preserve">
+    <value>Chưa nhập tài khoản(Mã khách hàng)</value>
+  </data>
+  <data name="equalpass" xml:space="preserve">
+    <value>Mật khẩu nhập lại chưa khớp.</value>
+  </data>
+  <data name="ErrorEmail" xml:space="preserve">
+    <value>Không đúng định dạng mail</value>
+  </data>
+  <data name="leastlong" xml:space="preserve">
+    <value>{0} ít nhất phải có {2} ký tự trở lên.</value>
+  </data>
+  <data name="LongestName" xml:space="preserve">
+    <value>Tên khách hàng không vượt quá 150 kí tự</value>
+  </data>
+  <data name="LongestUsername" xml:space="preserve">
+    <value>Tài khoản không thể vượt quá 150 kí tự</value>
+  </data>
+  <data name="Pass" xml:space="preserve">
+    <value>Mật khẩu:</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Tên đăng nhập:</value>
+  </data>
+  <data name="EmailFooter" xml:space="preserve">
+    <value>Trân trọng cảm ơn!</value>
+  </data>
+  <data name="EmailTitle" xml:space="preserve">
+    <value>Kính gửi Quý khách,</value>
+  </data>
+  <data name="designedby" xml:space="preserve">
+    <value>Thiết kế bởi VNPT Software</value>
+  </data>
+  <data name="InvDown" xml:space="preserve">
+    <value>Down về dạng *.inv</value>
+  </data>
+  <data name="InvoiceAdjustD" xml:space="preserve">
+    <value>Hóa đơn điều chỉnh giảm</value>
+  </data>
+  <data name="InvoiceAdjustIn" xml:space="preserve">
+    <value>Hóa đơn điều chỉnh tăng</value>
+  </data>
+  <data name="InvoiceAdjustInfor" xml:space="preserve">
+    <value>Hóa đơn điều chỉnh thông tin</value>
+  </data>
+  <data name="InvoiceReplace" xml:space="preserve">
+    <value>Hóa đơn thay  thế</value>
+  </data>
+</root>

@@ -1,0 +1,114 @@
+﻿@model IEnumerable<Einvoice_Customer.Models.InvoiceCusSP>
+@{
+    ViewBag.Title = Einvoice_Customer.Language.Resource.ListBill;
+    Layout = "~/Views/Shared/_LayoutPDF.cshtml";
+}
+
+<p class="text-primary text-center">
+    <h3 style="text-align:center"><b>@ViewBag.TenDonVi.ToUpper()</b></h3>
+</p>
+@{
+    if (@ViewBag.FromDate != @ViewBag.ToDate)
+    {
+        <p class="text-primary text-center">
+            <h4 style="text-align:center">
+                <b>@ViewBag.Title @Einvoice_Customer.Language.Resource.FromDate  @ViewBag.FromDate @Einvoice_Customer.Language.Resource.ToDate @ViewBag.ToDate </b>
+            </h4>
+        </p>
+    }
+    else
+    {
+        <p class="text-primary text-center">
+            <h4 style="text-align:center">
+                <b>@ViewBag.Title</b>
+            </h4>
+            
+        </p>
+    }
+}
+
+    
+
+    <table class="table table-striped table-hover ">
+
+        <tr>
+
+            <th>
+                STT
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.name)*@
+                @Einvoice_Customer.Language.Resource.TenHoaDon
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.pattern)*@
+                @Einvoice_Customer.Language.Resource.MauSo
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.serial)*@
+                @Einvoice_Customer.Language.Resource.KyHieu
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.invnum)*@
+                @Einvoice_Customer.Language.Resource.SoHoaDon
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.amount)*@
+                @Einvoice_Customer.Language.Resource.TongTien
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.publishdate)*@
+                @Einvoice_Customer.Language.Resource.NgayXuat
+            </th>
+
+            <th>
+                @*@Html.DisplayNameFor(model => model.payment)*@
+                @Einvoice_Customer.Language.Resource.ThanhToan
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.status)*@
+                @Einvoice_Customer.Language.Resource.TrangThai
+            </th>
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+
+            <tr>
+
+                <td>
+                    @item.ROWNUM
+                </td>
+                <td>
+                        <p>Hóa đơn giá trị gia tăng</p>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pattern)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Serial)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InvNo).ToString().PadLeft(7, '0')
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Amount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KindOfService)
+                </td>
+
+                <td>
+                    @Einvoice_Customer.Common.InvoiceStatus.PaymentStatusDescription(item.PaymentStatus)
+                </td>
+                <td>
+                    @Einvoice_Customer.Common.InvoiceStatus.StatusDescription(item.Status)
+                </td>
+
+            </tr>
+        }
+
+    </table>
+
+

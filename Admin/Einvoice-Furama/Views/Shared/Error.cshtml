@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Thông Báo Lỗi";
+    @model HandleErrorInfo
+}
+
+<h1>Có lỗi</h1>
+<p>Lỗi phát sinh bởi : @ViewBag.RequestedUrl</p>
+@if (ViewBag.ReferrerUrl != null) {
+<p>Quay lại  <a href="@ViewBag.ReferrerUrl">trang trước</a>.</p>
+}
+
+<h3>Chi tiết lỗi :</h3>
+<p>Controller: @Model.ControllerName</p>
+<p>Action: @Model.ActionName</p>
+<p>Source : @Model.Exception.Source</p>
+
+<p>Stack Trace: </p>
+@* This section shows the stack trace in an easier to read format. *@
+@foreach (string s in Model.Exception.StackTrace.Split(new[] {" at"}, StringSplitOptions.RemoveEmptyEntries))
+{
+    if (!string.IsNullOrWhiteSpace(s))
+    {
+        <code>at @s</code>
+        <br/>
+    }
+}
+
+@* Error page must be longer than 512 bytes for IE and Chrome to show it.
+        So add padding in case we're short. *@
+    @(new string(' ', 512))

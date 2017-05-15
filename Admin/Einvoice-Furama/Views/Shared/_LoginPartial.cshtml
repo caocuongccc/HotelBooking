@@ -1,0 +1,45 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+    @Html.AntiForgeryToken()
+
+    <ul class="nav navbar-nav navbar-right">
+        
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                <span class="glyphicon glyphicon-user"></span>
+                <span class="hello-text">@Einvoice_Customer.Language.Resource.Hello, </span> 
+                <span class="username">@User.Identity.GetUserName() !</span> <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+                @if (User.Identity.GetUserName() != "admin")
+                {
+                    <li>
+                        @Html.ActionLink(Einvoice_Customer.Language.Resource.Profile, "Profile", "Account", routeValues: null, htmlAttributes: new { title = Einvoice_Customer.Language.Resource.Profile })
+                    </li>
+                }
+                
+                <li>
+                    @Html.ActionLink(Einvoice_Customer.Language.Resource.ChangePass, "ChangePassword", "Account")
+                    
+                </li>
+                <li class="divider"></li>
+                <li>
+                    
+                <a href="javascript:document.getElementById('logoutForm').submit()">
+                    <span class="glyphicon glyphicon-log-out"></span>@Einvoice_Customer.Language.Resource.Exit</a></li>
+                
+            </ul>
+        </li>
+      
+    </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        </ul>
+    
+}

@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = Einvoice_Customer.Language.Resource.NoteFromSystem ;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@if (!Request.IsAuthenticated){
+    <span class="alert alert-warning">@ViewBag.Message</span>
+}
+else {
+    <span class="alert alert-warning">@ViewBag.Message</span>
+}
+    
+
+

@@ -1,0 +1,163 @@
+﻿@{
+    Layout = null;
+    int paymentstatus = ViewBag.PaymentStatus;
+    string html = HttpUtility.HtmlDecode(@ViewBag.IframeUrl);
+    if (paymentstatus == 0)
+    {
+        int vitri1 = html.IndexOf("<div class=\"bgimg\"");
+        int vitri2 = -1;
+        if (vitri1 != -1)
+        {
+            vitri2 = html.IndexOf("</div></a></div>", vitri1) + 10;
+            html = html.Remove(vitri1, vitri2 - vitri1);
+           // html = html.Replace(bg, "<p style=\"height: 65px; float:left; width: 100 % \">&#160;</p>");
+        }
+        //html = System.Text.RegularExpressions.Regex.Replace(html, "<div class=\"bgimg\".*?></div>", "<div class=\"bgimg\"></div>");
+        //html = System.Text.RegularExpressions.Regex.Replace(html, "<strong class=\"number\".*?</strong>", string.Empty);
+        int vitri11 = html.IndexOf("<span class=\"number\"");
+        if (vitri11 != -1)
+        {
+            vitri2 = html.IndexOf("</span>", vitri11);
+            html = html.Remove(vitri11, vitri2 - vitri11);
+        }
+    }
+}
+<script src="~/Scripts/jquery.min.js"></script>
+<h4 style="float: none;margin: auto;width: 816px;"><input id="btnPrint" class="btn btn-primary" type="button" value="In" onclick="return PrintInv();" /> </h4>
+<style type="text/css">
+    .print{display: block !important}
+    .holder {
+        width: 816px;
+        bottom: 0;
+        margin: 15px auto !important;
+    }
+
+        .holder a {
+            font-size: 12px;
+            cursor: pointer;
+            margin: 0 5px;
+            color: #333;
+        }
+
+            .holder a:hover {
+                background-color: #222;
+                color: #fff;
+            }
+
+            .holder a.jp-previous {
+                margin-right: 15px;
+            }
+
+            .holder a.jp-next {
+                margin-left: 15px;
+            }
+
+            .holder a.jp-current, a.jp-current:hover {
+                color: #FF4242;
+                font-weight: bold;
+            }
+
+            .holder a.jp-disabled, a.jp-disabled:hover {
+                color: #bbb;
+            }
+
+            .holder a.jp-current, a.jp-current:hover,
+            .holder a.jp-disabled, a.jp-disabled:hover {
+                cursor: default;
+                background: none;
+            }
+
+        .holder span {
+            margin: 0 5px;
+        }
+</style>
+<link href="~/Scripts/paqination/animate.css" rel="stylesheet" />
+<script src="~/Scripts/paqination/jPages.js"></script>
+<link href="~/Scripts/paqination/jPages.css" rel="stylesheet" />
+<script src="~/Scripts/paqination/tabifier.js"></script>
+<script>
+  /* when document is ready */
+  $(function() {
+    /* initiate plugin */
+    $("div.holder").jPages({
+        containerID: "main",
+        perPage: 1,
+        startPage: 1,
+        startRange: 1,
+        midRange: 8,
+        endRange: 2,
+        previous: "← Trước",
+        next: "Sau →",
+    });
+  });
+
+  function pace() {
+      $("div.holder").jPages({
+          containerID: "main",
+          perPage: 1,
+          startPage: 1,
+          startRange: 1,
+          midRange: 8,
+          endRange: 2,
+          previous: "← Trước",
+          next: "Sau →"
+      });
+  }
+</script>
+@if (paymentstatus == 0) // hóa đơn chưa thanh toán
+{
+    <h4 style="float: none;margin: auto;width: 816px;">Nội dung hóa đơn [Chưa thanh toán]</h4>
+}
+
+<div id="content" class='content'>
+   
+    @Html.Raw(html)
+   
+</div>
+<div class="holder">
+</div>
+@*<script>
+    $(document).ready(function () {
+        debugger
+        $("tr").find("span[style='color:#ad9b5e !important']").prepend("<span style='color:#ad9b5e !important'>10</span>");
+});
+</script>*@
+<script type="text/javascript">
+    var is_chrome = Boolean(window.chrome);
+    function PrintInv() {
+        $(".pagecurrent").addClass("print");
+        $(".pagecurrent").removeAttr("style");
+
+        $("#content .statistics").css("float","none");
+        var divContents = $("#content").css("width","100%").html();
+
+        var printWindow = window.open('', '', 'height=989,width=830');
+        printWindow.document.write('<html><head><title>In Hóa Đơn</title>');
+        printWindow.document.write('<style type=\"text/css\">');
+        printWindow.document.write(':root{-webkit-print-color-adjust:exact}');
+        printWindow.document.write('</style>');
+        printWindow.document.write('</head><body >');
+        printWindow.document.write(divContents);
+        printWindow.document.write('</body></html>');
+        printWindow.document.close();
+        if (is_chrome) {
+            printWindow.onload = function () {
+                setTimeout(function () {
+                    printWindow.print();
+                    printWindow.close();
+                    $(".pagecurrent").removeClass("print");
+                    $(".pagecurrent").attr("style", "display:block");
+                    pace();
+                })
+            }
+        }
+        else
+        {
+            printWindow.print();
+            printWindow.close();
+            $(".pagecurrent").removeClass("print");
+            $(".pagecurrent").attr("style", "display:block");
+            pace();
+        }
+    }
+</script>
